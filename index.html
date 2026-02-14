@@ -63,6 +63,7 @@
     .sidebar button:hover {
         transform: scale(1.02);
     }
+    
 
     /* CONTENT */
     .content-frame {
@@ -110,6 +111,7 @@
     .constants-table div:nth-child(even) {
         background: #f5f5f5;
     }
+    
 </style>
 </head>
 <body>
@@ -126,6 +128,7 @@
         <button style="background:#ffb74d" onclick="showTool(&#39;charge&#39;)">Charge Lookup</button>
         <button style="background:#64b5f6" onclick="showTool(&#39;diff&#39;)">Molecule/Compound Differentiator</button>
         <button style="background:#cfd8dc" onclick="showTool(&#39;constants&#39;)">Constants</button>
+        <button style="background:#e6db0c" onclick="showTool('ptable')">Periodic Table</button>
     </div>
     <div class="content-frame" id="content"><h2>Key AP® Chemistry Constants</h2><div class="constants-table"><div>Avogadro's (Na)</div><div>6.022 x 10^23 mol⁻¹</div><div>Gas Const (R)</div><div>0.08206 L·atm/(mol·K)</div><div>Gas Const (R)</div><div>8.314 J/(mol·K)</div><div>Planck's (h)</div><div>6.626 x 10⁻³⁴ J·s</div><div>Speed of Light (c)</div><div>2.998 x 10⁸ m/s</div><div>Electron Mass</div><div>0.0005 amu</div><div>Proton Mass</div><div>1.007 amu</div><div>Neutron Mass</div><div>1.008 amu</div></div></div>
 </div>
@@ -229,6 +232,14 @@ function showTool(tool){
         tableHTML += '</div>';
         content.innerHTML = tableHTML;
     }
+    else if(tool === "ptable"){
+    content.innerHTML = `
+        <h2>Periodic Table</h2>
+        <img src="periodictable.png" style="max-width:100%; height:auto; display:block; margin:auto; border:1px solid #ccc; border-radius:8px;"> 
+
+    `;
+}
+
 }
 
 /* FUNCTIONS */
